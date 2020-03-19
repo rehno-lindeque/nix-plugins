@@ -25,3 +25,9 @@ target_include_directories(nix-extra-builtins PUBLIC ${NIX_INCLUDE_DIRS})
 target_compile_options(nix-extra-builtins PUBLIC ${NIX_CFLAGS_OTHER})
 
 install(TARGETS nix-extra-builtins DESTINATION lib/nix/plugins)
+
+add_library(nix-force-gc MODULE force-gc.cc)
+target_include_directories(nix-force-gc PUBLIC ${NIX_INCLUDE_DIRS})
+target_compile_options(nix-force-gc PUBLIC ${NIX_CFLAGS_OTHER})
+
+install(TARGETS nix-force-gc DESTINATION lib/nix/plugins)
